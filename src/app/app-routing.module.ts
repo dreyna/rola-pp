@@ -7,7 +7,7 @@ import { UpdateRolComponent } from './components/roles/update-rol/update-rol.com
 
 const ROUTES: Routes = [
   { path: 'listar', component: ListarRolComponent},
-  { path: "rol/agregar", component: AadRolComponent },
+  { path: "rol/add", component: AadRolComponent },
   { path: "editar/:id", component: UpdateRolComponent }
   /*
   { path: "", redirectTo: "/home", pathMatch: "full" },
