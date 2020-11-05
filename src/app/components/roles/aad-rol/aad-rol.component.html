@@ -1,0 +1,12 @@
+<h2>Agregar Rol <mat-icon>card_membership</mat-icon>
+</h2>
+<form (ngSubmit)="onSubmit()" >
+    <p>
+       
+            <input matInput name="NOMROL" [(ngModel)]="rolModel.NOMROL" type="text" placeholder="Rol">
+     
+    </p>    
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+    </p>
+</form>

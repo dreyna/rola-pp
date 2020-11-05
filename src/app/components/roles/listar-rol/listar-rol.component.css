@@ -1,0 +1,15 @@
+.center {
+    display: flex;
+    justify-content: center;
+  }
+  .lado {
+    display: flex;
+    justify-content: right;
+  }
+  table {
+    width: 25%;
+  }
+  .add{
+      color: #00c853;
+      font-size: 40px;
+  }
