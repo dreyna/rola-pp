@@ -18,4 +18,7 @@ export class ListarRolComponent implements OnInit {
       }
     ) 
   }
+  delRol(num:number):void{
+    alert(num);
+  }
 }
