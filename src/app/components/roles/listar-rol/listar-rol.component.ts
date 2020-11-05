@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Rol } from 'src/app/models/rol';
 import { RolService } from 'src/app/services/rol.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-listar-rol',
   templateUrl: './listar-rol.component.html',
@@ -10,7 +10,6 @@ import { RolService } from 'src/app/services/rol.service';
 export class ListarRolComponent implements OnInit {
   roles:Rol[];
   constructor(private rolService:RolService) { }
-
   ngOnInit(): void {
     this.rolService.getRoles().subscribe(
       (data)=>{
@@ -19,6 +18,10 @@ export class ListarRolComponent implements OnInit {
     ) 
   }
   delRol(num:number):void{
-    alert(num);
+    Swal.fire(
+      'The Internet?',
+      'That thing is still around?',
+      'question'
+    )
   }
 }

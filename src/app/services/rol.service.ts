@@ -18,12 +18,12 @@ export class RolService {
   getRol(id:number):Observable<Rol[]> {
     return this.http.get<Rol[]>(this.rolUrl+'/'+id);
   }
-  addRol(rol: Rol) {
-    return this.http.post(this.rolUrl+"/add", rol, {headers:this.httpHeaders});
+  addRol(rol: Rol): Observable<number>{
+    return this.http.post<number>(this.rolUrl+"/add", rol, {headers:this.httpHeaders});
   }
 
   deleteRol(rol: Rol) {
-    return this.http.delete(`${this.rolUrl}/delete/${rol.ID_ROL}`);
+    return this.http.delete(this.rolUrl+'/delete/'+rol.ID_ROL);
   }
 
   updateRol(rol: Rol) {

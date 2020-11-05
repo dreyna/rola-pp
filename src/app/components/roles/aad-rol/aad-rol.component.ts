@@ -11,17 +11,17 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class AadRolComponent implements OnInit {
 
-  constructor(private rolService:RolService,private router: Router,) { }
+  constructor(private rolService:RolService,private router: Router) { }
 
   ngOnInit(): void {
   }
   rolModel:Rol = new Rol();
   onSubmit(){
 
-  }/*
+  }
   public create():void{
       this.rolService.addRol(this.rolModel).subscribe(
         response=>this.router.navigate(['/rol'])
       )
-  }*/
+  }
 }
