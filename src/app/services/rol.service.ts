@@ -22,8 +22,8 @@ export class RolService {
     return this.http.post<number>(this.rolUrl+"/add", rol, {headers:this.httpHeaders});
   }
 
-  deleteRol(rol: Rol) {
-    return this.http.delete(this.rolUrl+'/delete/'+rol.ID_ROL);
+  deleteRol(id: number): Observable<number>{
+    return this.http.delete<number>(`${this.updateRol}/${id}`,{headers:this.httpHeaders});
   }
 
   updateRol(rol: Rol) {

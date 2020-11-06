@@ -1,5 +1,5 @@
 export class Rol {
-    ID_ROL:number;
-    NOMROL:string;
-    ESTADO: number;
+    id_rol:number;
+    nomrol:string;
+    estado: number;
 }

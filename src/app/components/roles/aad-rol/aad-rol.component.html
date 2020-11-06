@@ -9,12 +9,12 @@
         <mat-card-content>
             <mat-form-field appearance="outline">
                 <mat-label>Rol</mat-label>
-                <input matInput placeholder="Ingresar Rol">
+                <input matInput [(ngModel)]="rolModel.nomrol" placeholder="Ingresar Rol" name="nomrol">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
             <section>
                 <div class="example-button-row">
-                    <button mat-raised-button color="primary">Primary</button>
+                    <button mat-raised-button color="primary" (click)="create()">Primary</button>
                 </div>
             </section>
         </mat-card-content>
