@@ -17,8 +17,9 @@ export class AadRolComponent implements OnInit {
   ngOnInit(): void {}  
   
   public create():void{       
-      this.rolService.addRol(this.rolModel).subscribe(
-        response=>{this.router.navigate(['/listar'])
+      this.rolService.addRol(this.rolModel).subscribe(        
+        response=>{
+          this.router.navigate(['/listar'])
         swal.fire('Nuevo Rol', `Rol ${this.rolModel.nomrol} creado con exito`,"success")      
       })
      

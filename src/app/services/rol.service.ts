@@ -15,18 +15,18 @@ export class RolService {
   getRoles():Observable<Rol[]>{
     return this.http.get<Rol[]>(this.rolUrl+'/all');
   }
-  getRol(id:number):Observable<Rol[]> {
-    return this.http.get<Rol[]>(this.rolUrl+'/'+id);
+  getRol(id:number):Observable<Object> {
+    return this.http.get(`${this.rolUrl}/${id}`);
   }
   addRol(rol: Rol): Observable<number>{
     return this.http.post<number>(this.rolUrl+"/add", rol, {headers:this.httpHeaders});
   }
 
   deleteRol(id: number): Observable<number>{
-    return this.http.delete<number>(`${this.updateRol}/${id}`,{headers:this.httpHeaders});
+    return this.http.delete<number>(this.rolUrl+"/delete/"+id,{headers:this.httpHeaders});
   }
 
-  updateRol(rol: Rol) {
-    return this.http.put(`${this.rolUrl}/update/`, rol);
+  updateRol(rol: Rol):Observable<number> {
+    return this.http.put<number>(`${this.rolUrl}/update/${rol.id_rol}`, rol,{headers:this.httpHeaders});
   }
 }
