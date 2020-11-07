@@ -12,14 +12,10 @@
                 <input matInput [(ngModel)]="rol.nomrol" placeholder="Ingresar Rol">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
-            
-            <section>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary" (click)="modificarRol()">Modificar</button>
-                </div>
-            </section>
         </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="modificarRol()">Modificar</button>
+            <a mat-raised-button routerLink="/listar" color="warn">Cancelar</a>
+        </mat-card-actions>
       </mat-card>
-
-    <!---->
 </div>

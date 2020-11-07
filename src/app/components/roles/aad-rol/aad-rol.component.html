@@ -1,9 +1,9 @@
 <div class="center">
     <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Registrar</mat-card-title>
-          <mat-card-subtitle>Roles</mat-card-subtitle>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Registrar</mat-card-title>
+            <mat-card-subtitle>Roles</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
@@ -12,13 +12,12 @@
                 <input matInput [(ngModel)]="rolModel.nomrol" placeholder="Ingresar Rol" name="nomrol">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
-            <section>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary" (click)="create()">Registrar</button>
-                </div>
-            </section>
         </mat-card-content>
-      </mat-card>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="create()">Registrar</button>
+            <a mat-raised-button routerLink="/listar" color="warn">Cancelar</a>
+        </mat-card-actions>
+    </mat-card>
 
     <!---->
 </div>
