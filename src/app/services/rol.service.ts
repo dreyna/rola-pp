@@ -18,6 +18,9 @@ export class RolService {
   getRol(id:number):Observable<Object> {
     return this.http.get(`${this.rolUrl}/${id}`);
   }
+  updateLogica(id:number):Observable<number> {
+    return this.http.put<number>(`${this.rolUrl}/update/logica/${id}`,{headers:this.httpHeaders});
+  }
   addRol(rol: Rol): Observable<number>{
     return this.http.post<number>(this.rolUrl+"/add", rol, {headers:this.httpHeaders});
   }

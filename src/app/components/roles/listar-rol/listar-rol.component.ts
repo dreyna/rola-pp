@@ -46,4 +46,27 @@ export class ListarRolComponent implements OnInit {
       }
     ) 
   }
+  delLogica(num:number):void{
+   
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "No podras reverti esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.rolService.updateLogica(num).subscribe(
+          response=>{
+            this.listar()
+            Swal.fire(
+              'Eliminado!',
+              'El registro ha sido eliminado.',
+              'success')
+          })        
+      }
+    })  
+  }
 }
