@@ -15,33 +15,34 @@ export class ListarRolComponent implements OnInit {
     this.listar();
   }
   delRol(num:number):void{
-    this.rolService.deleteRol(num).subscribe(
-      response=>{
-        Swal.fire({
-          title: 'Estas seguro?',
-          text: "No podras reverti esto!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "No podras reverti esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.rolService.deleteRol(num).subscribe(
+          response=>{
             this.listar()
             Swal.fire(
               'Eliminado!',
               'El registro ha sido eliminado.',
-              'success'
-            )
-          }
-        })
+              'success')
+          })        
       }
-    )    
+    })  
   }
   listar():void{
     this.rolService.getRoles().subscribe(
-      (data)=>{
+      (data)=>{        
         this.roles = data['cursor_roles'];
+        console.log("Roles",this.roles);        
+      },(err)=>{
+        console.log("Error en el listar-rol-component")
       }
     ) 
   }
